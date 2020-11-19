@@ -1,9 +1,11 @@
 from setuptools import setup
 
 setup(
-    name="PyPSI",
-    version='1.0.0',
+    name="PythonPSI",
+    version='1.3.0',
     description='CLI + API for Google PageSpeed Insights',
+    long_description=long_description,
+    long_description_content_type="text/markdown",
     url='https://github.com/prakhargurunani/PyPSI',
     author='Prakhar Gurunani',
     author_email='prakhargurunani@gmail.com',

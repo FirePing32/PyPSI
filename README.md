@@ -5,7 +5,7 @@ CLI 🖥 + API for Google PageSpeed Insights
 
 ## Installation
 ```bash
-pip install PyPSI
+pip install PythonPSI
 ```
 
 ## Usage
@@ -30,7 +30,7 @@ psi google.com --category seo --stratergy desktop --locale en
 ## API Usage
 
 ```python
-from PyPSI.api import PSI
+from PythonPSI.api import PSI
 
 PSI('google.com', category='seo', locale='en', stratergy='desktop')
 # Returns JSON output
