@@ -5,7 +5,7 @@ with open('README.md') as f:
 
 setup(
     name="PythonPSI",
-    version='1.4.2',
+    version='1.4.3',
     packages=['PythonPSI'],
     description='CLI + API for Google PageSpeed Insights',
     long_description=README,
