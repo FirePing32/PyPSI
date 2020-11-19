@@ -16,7 +16,7 @@ setup(
 
         # Indicate who your project is intended for
         'Intended Audience :: Developers',
-        'Topic :: Site Performance :: SEO Tools',
+        'Topic :: Software Development :: Build Tools',
 
         # Pick your license as you wish
         'License :: OSI Approved :: MIT License',

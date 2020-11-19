@@ -1,3 +1,22 @@
+bleach==3.2.1
+certifi==2020.11.8
+chardet==3.0.4
 click==7.1.2
--e git+https://github.com/prakhargurunani/PyPSI@8fe18e6f9c45c3c88bfb48a39951342410aa7b85#egg=pypsi
+colorama==0.4.4
+docutils==0.16
+idna==2.10
+keyring==21.5.0
+packaging==20.4
+pkginfo==1.6.1
+Pygments==2.7.2
+pyparsing==2.4.7
+-e git+https://github.com/prakhargurunani/PyPSI@3c9f7c94ef5c3d1207b706a847289f2c248cddc1#egg=pypsi
+readme-renderer==28.0
+requests==2.25.0
+requests-toolbelt==0.9.1
+rfc3986==1.4.0
+six==1.15.0
+tqdm==4.52.0
+twine==3.2.0
 urllib3==1.26.2
+webencodings==0.5.1
