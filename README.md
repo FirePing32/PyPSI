@@ -1,7 +1,7 @@
 # PyPSI
 CLI 🖥 + API for Google PageSpeed Insights
 
-<center><img src="PyPSI.png" width="75%"></center>
+![PyPSI](https://raw.githubusercontent.com/prakhargurunani/PyPSI/main/PyPSI.png)
 
 ## Installation
 ```bash
