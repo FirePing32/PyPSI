@@ -4,7 +4,7 @@ long_description = """
 # PyPSI
 CLI 🖥 + API for Google PageSpeed Insights
 
-![PythonPSI](PyPSI.png)
+![PythonPSI](https://raw.githubusercontent.com/prakhargurunani/PyPSI/main/PyPSI.png)
 
 ## Installation
 ```bash
@@ -44,7 +44,7 @@ PSI('google.com', category='seo', locale='en', stratergy='desktop')
 
 setup(
     name="PythonPSI",
-    version='1.3.1',
+    version='1.3.2',
     description='CLI + API for Google PageSpeed Insights',
     long_description=long_description,
     long_description_content_type="text/markdown",
