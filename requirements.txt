@@ -1,0 +1,3 @@
+click==7.1.2
+-e git+https://github.com/prakhargurunani/PyPSI@8fe18e6f9c45c3c88bfb48a39951342410aa7b85#egg=pypsi
+urllib3==1.26.2
