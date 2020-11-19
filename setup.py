@@ -5,11 +5,14 @@ with open('README.md') as f:
 
 setup(
     name="PythonPSI",
-    version='1.3.3',
+    version='1.4.0',
+    packages=['PythonPSI'],
     description='CLI + API for Google PageSpeed Insights',
     long_description=README,
     long_description_content_type="text/markdown",
+    include_package_data=True,
     url='https://github.com/prakhargurunani/PyPSI',
+    download_url="https://github.com/prakhargurunani/PyPSI/archive/main.zip",
     author='Prakhar Gurunani',
     author_email='prakhargurunani@gmail.com',
     classifiers=[  # Optional
@@ -45,6 +48,6 @@ setup(
     ],
     entry_points='''
         [console_scripts]
-        psi=main:psi
+        psi=PythonPSI.main:psi
     ''',
 )
