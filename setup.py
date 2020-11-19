@@ -44,7 +44,7 @@ PSI('google.com', category='seo', locale='en', stratergy='desktop')
 
 setup(
     name="PythonPSI",
-    version='1.3.0',
+    version='1.3.1',
     description='CLI + API for Google PageSpeed Insights',
     long_description=long_description,
     long_description_content_type="text/markdown",
