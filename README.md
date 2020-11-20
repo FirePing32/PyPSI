@@ -20,15 +20,35 @@ Example:
 psi google.com --category seo --stratergy desktop --locale en
 ```
 
-### Arguments
-- `URL` - Required
-- `--api_key` - Optional, default: **None**, description: _Required to use the API in an automated way and make multiple requests per second. [Learn more](https://developers.google.com/speed/docs/insights/v5/get-started#key)._
-- `--category` - Optional, default: **performance**, description: _A Lighthouse category to run; if none are given, only Performance category will be run_
-- `--locale` - Optional, default: **en**, description: _The locale used to localize formatted results_
-- `--stratergy` - Optional, default: **desktop**, description: _The analysis strategy (desktop or mobile) to use, and desktop is the default_
-- `--utm_campaign` - Optional, default: **None**, description: _Campaign name for analytics._
-- `--utm_source` - Optional, default: **None**, description: _Campaign source for analytics._
-- `--captcha_token` - Optional, default: **None**, description: _The captcha token passed when filling out a captcha._
+## CLI
+```bash
+$ psi --help
+
+    Usage: psi [OPTIONS] URL
+
+    Options:
+    --api_key TEXT        Required to use the API in an automated way and make
+                            multiple requests per second
+
+    --category TEXT       A Lighthouse category to run; if none are given, only
+                            Performance category will be run
+
+    --locale TEXT         The locale used to localize formatted results
+    --stratergy TEXT      The analysis strategy (desktop or mobile) to use, and
+                            desktop is the default
+
+    --threshold TEXT      Threshold score to pass the PageSpeed test. Useful for
+                            setting a performance budget.
+
+    --links TEXT          If passed adds links with more info about
+                            opportunities. Useful for checking documentation about
+                            opportunities.
+
+    --utm_campaign TEXT   Campaign name for analytics.
+    --utm_source TEXT     Campaign source for analytics.
+    --captcha_token TEXT  The captcha token passed when filling out a captcha.
+    --help                Show this message and exit.
+```
 
 ## API Usage
 
@@ -38,12 +58,39 @@ from PythonPSI.api import PSI
 PSI('google.com', category='seo', locale='en', stratergy='desktop')
 # Returns JSON output
 ```
-- `PSI` - Required arguments: 1, Optional arguments: 7
-    - `URL`: Required
-    - `api_key`: Optional
-    - `category`: Optional
-    - `locale`: Optional
-    - `stratergy`: Optional
-    - `utm_campaign`: optional
-    - `utm_source`: Optional
-    - `captcha_token`: Optional
+- `PSI` - _Required arguments_: 1, _Optional arguments_: 9
+
+    - `URL`: 
+        - Required
+        - _Default_: **_None_**
+    - `api_key`: 
+        - Optional
+        - _Default_: **_None_**
+    - `category`: 
+        - Optional
+        - _Default_: **performance**
+        - Options: `accessibility`, `best_practices`, `performance`, `pwa`, `seo`
+    - `locale`: 
+        - Optional
+        - _Default_: **en**
+    - `stratergy`: 
+        - Optional
+        - _Default_: **desktop**
+        - Options: `desktop`, `mobile`
+    - `threshold`:
+        - Optional
+        - _Default_: **_None_**
+        - Options: `INT` 0-100
+    - `links`:
+        - Optional
+        - _Default_: **false**
+        - Options: `true`, `false`
+    - `utm_campaign`: 
+        - optional
+        - _Default_: **_None_**
+    - `utm_source`: 
+        - Optional
+        - _Default_: **_None_**
+    - `captcha_token`: 
+        - Optional
+        - _Default_: **_None_**
