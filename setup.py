@@ -1,11 +1,12 @@
 from setuptools import setup
+from PythonPSI import about
 
 with open('README.md') as f:
     README = f.read()
 
 setup(
     name="PythonPSI",
-    version='1.4.3',
+    version=about.__version__,
     packages=['PythonPSI'],
     description='CLI + API for Google PageSpeed Insights',
     long_description=README,

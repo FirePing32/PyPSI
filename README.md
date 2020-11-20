@@ -1,6 +1,8 @@
 # PyPSI
 CLI 🖥 + API for Google PageSpeed Insights
 
+[![PythonPSI](https://img.shields.io/pypi/v/PythonPSI)](https://pypi.org/project/PythonPSI/) ![PyPI - Downloads](https://img.shields.io/pypi/dm/PythonPSI)
+
 ![PyPSI](https://raw.githubusercontent.com/prakhargurunani/PyPSI/main/PyPSI.png)
 
 ## Installation
