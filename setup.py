@@ -45,7 +45,7 @@ setup(
     py_modules=['psi'],
     install_requires=[
         'click',
-        'urllib3'
+        'requests'
     ],
     entry_points='''
         [console_scripts]

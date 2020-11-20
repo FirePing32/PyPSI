@@ -33,6 +33,9 @@ $ psi --help
     --category TEXT       A Lighthouse category to run; if none are given, only
                             Performance category will be run
 
+    --metrics TEXT        Returns metrics of a particular field in response
+                            object
+
     --locale TEXT         The locale used to localize formatted results
     --stratergy TEXT      The analysis strategy (desktop or mobile) to use, and
                             desktop is the default
@@ -70,6 +73,10 @@ PSI('google.com', category='seo', locale='en', stratergy='desktop')
         - Optional
         - _Default_: **performance**
         - Options: `accessibility`, `best_practices`, `performance`, `pwa`, `seo`
+    - `metrics`:
+        - Optional
+        - _Default_: **None**
+        - Options: `kind`, `captchaResult`, `id`, `loadingExperience`, `originLoadingExperience`, `analysisUTCTimestamp`, `lighthouseResult`, `version`
     - `locale`: 
         - Optional
         - _Default_: **en**
