@@ -1,8 +1,9 @@
 name: Build and Publish
 
 on:
-  release:
-    types: [created]
+  push:
+    branches:
+      - main
 
 jobs:
   deploy:
@@ -20,6 +21,11 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install setuptools wheel twine
+    - name: Read version
+      id: version
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./about.txt
     - name: Build and publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
@@ -27,3 +33,31 @@ jobs:
       run: |
         python setup.py sdist bdist_wheel
         twine upload dist/*
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: dist
+        path: dist/
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: v${{ steps.version.outputs.content }}
+        release_name: v${{ steps.version.outputs.content }}
+        body: |
+          ## What's new
+          - Setup automatic releases for PyPI and GitHub
+        draft: false
+        prerelease: false
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }} 
+        asset_path: dist/
+        asset_name: dist
+        asset_content_type: application/zip
