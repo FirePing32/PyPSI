@@ -1,0 +1,2 @@
+## What's new
+- Setup seperate jobs to deploy to PyPI and GitHub

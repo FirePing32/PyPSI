@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  deploy-pypi:
 
     runs-on: ubuntu-latest
 
@@ -33,6 +33,33 @@ jobs:
       run: |
         python setup.py sdist bdist_wheel
         twine upload dist/*
+  deploy-release:
+    needs: [deploy-pypi]
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.x'
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install setuptools wheel twine
+    - name: Read version
+      id: version
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./about.txt
+    - name: Read whats_new
+      id: whats_new
+      uses: juliangruber/read-file-action@v1
+      with:
+        path: ./whats_new.txt
+    - name: Build
+      run: |
+        python setup.py sdist bdist_wheel
     - name: Upload Artifact
       uses: actions/upload-artifact@v2
       with:
@@ -46,9 +73,7 @@ jobs:
       with:
         tag_name: v${{ steps.version.outputs.content }}
         release_name: v${{ steps.version.outputs.content }}
-        body: |
-          ## What's new
-          - Setup automatic releases for PyPI and GitHub
+        body: ${{ steps.whats_new.outputs.content }}
         draft: false
         prerelease: false
     - name: Prepare assets
