@@ -10,11 +10,7 @@ CLI 🖥 + API for Google PageSpeed Insights
 
 > PSI provides both lab and field data about a page. Lab data is useful for debugging performance issues, as it is collected in a controlled environment. However, it may not capture real-world bottlenecks. Field data is useful for capturing true, real-world user experience - but has a more limited set of metrics.
 
-<br>
-
 _`PyPSI` uses PageSpeed Insights API v5_
-
-<br>
 
 ## Installation
 ```bash

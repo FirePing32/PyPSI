@@ -1,2 +1,2 @@
 ## What's new
-- Query URLs are now seperately accessed from `utils.data`
+- Check if latest stable release is installed and report it through `psi --help`

@@ -1,8 +1,11 @@
 import click
 import requests
 from PythonPSI.utils.data import HTTPS_OR_HTTP, RAW
+from PythonPSI.utils.version import latest_version, current_version
 
-@click.command()
+version_info = "---  Current version: " + current_version() + "  ---  " + "Latest version: " + latest_version() + "  ---"
+
+@click.command(help=version_info)
 @click.option('--api_key', default='', help='Required to use the API in an automated way and make multiple requests per second')
 @click.option('--category', default='performance', help='A Lighthouse category to run; if none are given, only Performance category will be run')
 @click.option('--metrics', default='', help='Returns metrics of a particular field in response object')

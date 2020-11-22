@@ -1,22 +1,31 @@
+anytree==2.8.0
 bleach==3.2.1
+cachetools==4.1.1
 certifi==2020.11.8
 chardet==3.0.4
 click==7.1.2
 colorama==0.4.4
+distlib==0.3.1
 docutils==0.16
 idna==2.10
 keyring==21.5.0
+oyaml==1.0
 packaging==20.4
 pkginfo==1.6.1
 Pygments==2.7.2
 pyparsing==2.4.7
--e git+https://github.com/prakhargurunani/PyPSI@3c9f7c94ef5c3d1207b706a847289f2c248cddc1#egg=pypsi
+-e git+https://github.com/prakhargurunani/PyPSI@f72a010a2d3e2c5934edcce5e9990c4c9334ab3f#egg=PythonPSI
+PyYAML==5.3.1
 readme-renderer==28.0
 requests==2.25.0
 requests-toolbelt==0.9.1
 rfc3986==1.4.0
 six==1.15.0
+structlog==20.1.0
+tabulate==0.8.7
+toml==0.10.2
 tqdm==4.52.0
 twine==3.2.0
 urllib3==1.26.2
 webencodings==0.5.1
+wimpy==0.6
