@@ -1,26 +1,34 @@
 import json
 import requests
+from PythonPSI.utils.data import HTTPS_OR_HTTP, RAW
 
-def PSI(url, api_key="", metrics="", category="performance", locale="en", stratergy="desktop", threshold="", links="", utm_campaign="", utm_source="", captcha_token=""):
+def PSI(url, 
+        api_key="", 
+        metrics="", 
+        category="performance", 
+        locale="en", 
+        stratergy="desktop", 
+        threshold="", 
+        links="", 
+        utm_campaign="", 
+        utm_source="", 
+        captcha_token=""):
+        
     if "https" in url:
-        raw_data = requests.get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + url + '&key=' + api_key + '&stratergy=' + stratergy + '&locale=' + locale + '&category=' + category + '&threshold=' + threshold + '&links=' + links + '&utm_campaign=' + utm_campaign + '&utm_source=' + utm_source + '&captchaToken=' + captcha_token)
-        data = raw_data.json()
+        response = HTTPS_OR_HTTP(url, api_key, stratergy, locale, category, threshold, utm_campaign, utm_source, captcha_token)
         try:
-            return(data[metrics])
+            return(response[metrics])
         except:
-            return(data)
+            return(response)
     if "http" in url:
-        raw_data = requests.get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + url + '&key=' + api_key + '&stratergy=' + stratergy + '&locale=' + locale + '&category=' + category + '&threshold=' + threshold + '&utm_campaign=' + utm_campaign + '&utm_source=' + utm_source + '&captchaToken=' + captcha_token)
-        data = raw_data.json()
+        response= HTTPS_OR_HTTP(url, api_key, stratergy, locale, category, threshold, utm_campaign, utm_source, captcha_token)
         try:
-            return(data[metrics])
+            return(response[metrics])
         except:
-            return(data)
+            return(response)
     else:
-        site_url = "http://" + url
-        raw_data = requests.get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + site_url + '&key=' + api_key + '&stratergy=' + stratergy + '&locale=' + locale + '&category=' + category + '&threshold=' + threshold + '&utm_campaign=' + utm_campaign + '&utm_source=' + utm_source + '&captchaToken=' + captcha_token)
-        data = raw_data.json()
+        response = RAW(url, api_key, stratergy, locale, category, threshold, utm_campaign, utm_source, captcha_token)
         try:
-            return(data[metrics])
+            return(response[metrics])
         except:
-            return(data)
+            return(response)

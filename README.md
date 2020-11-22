@@ -5,6 +5,17 @@ CLI 🖥 + API for Google PageSpeed Insights
 
 ![PyPSI](https://raw.githubusercontent.com/prakhargurunani/PyPSI/main/PyPSI.png)
 
+
+> [PageSpeed Insights (PSI)](https://developers.google.com/speed/docs/insights/v5/about) reports on the performance of a page on both mobile and desktop devices, and provides suggestions on how that page may be improved.
+
+> PSI provides both lab and field data about a page. Lab data is useful for debugging performance issues, as it is collected in a controlled environment. However, it may not capture real-world bottlenecks. Field data is useful for capturing true, real-world user experience - but has a more limited set of metrics.
+
+<br>
+
+_`PyPSI` uses PageSpeed Insights API v5_
+
+<br>
+
 ## Installation
 ```bash
 pip install PythonPSI
@@ -17,7 +28,24 @@ psi <SITE_URL> <OPTION1> <OPTION2> ...
 
 Example:
 ```bash
-psi google.com --category seo --stratergy desktop --locale en
+$ psi developers.google.com --category seo --stratergy desktop --locale en
+
+    {
+    "captchaResult": "CAPTCHA_NOT_NEEDED",
+    "kind": "pagespeedonline#result",
+    "id": "https://developers.google.com/",
+    "loadingExperience": {
+        ...
+    },
+    "originLoadingExperience": {
+        ...
+    },
+    "lighthouseResult": {
+        ...
+    },
+    "analysisUTCTimestamp": {
+        ...
+    }
 ```
 
 ## CLI

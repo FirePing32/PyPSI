@@ -9,7 +9,7 @@ with open('about.txt') as a:
 setup(
     name="PythonPSI",
     version=VERSION,
-    packages=['PythonPSI'],
+    packages=['PythonPSI', 'PythonPSI.utils'],
     description='CLI + API for Google PageSpeed Insights',
     long_description=README,
     long_description_content_type="text/markdown",
@@ -40,6 +40,7 @@ setup(
         'Programming Language :: Python :: 3.6',
         'Programming Language :: Python :: 3.7',
         'Programming Language :: Python :: 3.8',
+        'Programming Language :: Python :: 3.9',
         'Programming Language :: Python :: 3 :: Only',
     ],
     keywords='cli, google, python, seo, page-speed-insights, performance, google-apis',

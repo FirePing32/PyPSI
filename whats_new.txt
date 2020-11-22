@@ -1,2 +1,2 @@
 ## What's new
-- Setup seperate jobs to deploy to PyPI and GitHub
+- Query URLs are now seperately accessed from `utils.data`

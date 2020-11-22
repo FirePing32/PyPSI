@@ -1,5 +1,6 @@
 import click
 import requests
+from PythonPSI.utils.data import HTTPS_OR_HTTP, RAW
 
 @click.command()
 @click.option('--api_key', default='', help='Required to use the API in an automated way and make multiple requests per second')
@@ -15,24 +16,20 @@ import requests
 @click.argument('url')
 def psi(api_key, category, metrics, locale, stratergy, threshold, links, utm_campaign, utm_source, captcha_token, url):
     if "https" in url:
-        raw_data = requests.get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + url + '&key=' + api_key + '&stratergy=' + stratergy + '&locale=' + locale + '&category=' + category + '&threshold=' + threshold + '&links=' + links + '&utm_campaign=' + utm_campaign + '&utm_source=' + utm_source + '&captchaToken=' + captcha_token)
-        data = raw_data.json()
+        response = HTTPS_OR_HTTP()
         try:
-            click.echo(data[metrics])
+            click.echo(response[metrics])
         except:
-            click.echo(data)
+            click.echo(response)
     if "http" in url:
-        raw_data = requests.get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + url + '&key=' + api_key + '&stratergy=' + stratergy + '&locale=' + locale + '&category=' + category + '&threshold=' + threshold + '&utm_campaign=' + utm_campaign + '&utm_source=' + utm_source + '&captchaToken=' + captcha_token)
-        data = raw_data.json()
+        response = HTTPS_OR_HTTP()
         try:
-            click.echo(data[metrics])
+            click.echo(response[metrics])
         except:
-            click.echo(data)
+            click.echo(response)
     else:
-        site_url = "http://" + url
-        raw_data = requests.get('https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url=' + site_url + '&key=' + api_key + '&stratergy=' + stratergy + '&locale=' + locale + '&category=' + category + '&threshold=' + threshold + '&utm_campaign=' + utm_campaign + '&utm_source=' + utm_source + '&captchaToken=' + captcha_token)
-        data = raw_data.json()
+        response = RAW(url)
         try:
-            click.echo(data[metrics])
+            click.echo(response[metrics])
         except:
-            click.echo(data)
+            click.echo(response)
