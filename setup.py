@@ -3,7 +3,7 @@ from setuptools import setup
 with open('README.md') as f:
     README = f.read()
 
-with open('about.txt') as a:
+with open('PythonPSI/about.txt') as a:
     VERSION = a.read()
 
 setup(

@@ -1,2 +1,0 @@
-## What's new
-- Check if latest stable release is installed and report it through `psi --help`

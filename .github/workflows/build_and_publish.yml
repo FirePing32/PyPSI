@@ -25,7 +25,7 @@ jobs:
       id: version
       uses: juliangruber/read-file-action@v1
       with:
-        path: ./about.txt
+        path: ./PythonPSI/about.txt
     - name: Build and publish
       env:
         TWINE_USERNAME: ${{ secrets.PYPI_USERNAME }}
@@ -51,12 +51,12 @@ jobs:
       id: version
       uses: juliangruber/read-file-action@v1
       with:
-        path: ./about.txt
-    - name: Read whats_new
-      id: whats_new
+        path: ./PythonPSI/about.txt
+    - name: Read changelog
+      id: changelog
       uses: juliangruber/read-file-action@v1
       with:
-        path: ./whats_new.txt
+        path: ./PythonPSI/changelog.txt
     - name: Build
       run: |
         python setup.py sdist bdist_wheel
@@ -73,7 +73,7 @@ jobs:
       with:
         tag_name: v${{ steps.version.outputs.content }}
         release_name: v${{ steps.version.outputs.content }}
-        body: ${{ steps.whats_new.outputs.content }}
+        body: ${{ steps.changelog.outputs.content }}
         draft: false
         prerelease: false
     - name: Prepare assets

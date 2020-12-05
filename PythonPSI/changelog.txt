@@ -1,0 +1,2 @@
+## What's new
+- Fix version and changelog imports
