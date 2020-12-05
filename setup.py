@@ -13,6 +13,7 @@ setup(
     description='CLI + API for Google PageSpeed Insights',
     long_description=README,
     long_description_content_type="text/markdown",
+    package_data={'PythonPSI': ['about.txt']},
     include_package_data=True,
     url='https://github.com/prakhargurunani/PyPSI',
     download_url="https://github.com/prakhargurunani/PyPSI/archive/main.zip",

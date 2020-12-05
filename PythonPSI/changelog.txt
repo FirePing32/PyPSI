@@ -1,2 +1,2 @@
 ## What's new
-- Fix version and changelog imports
+- Add `package_data` to include `about.txt`
