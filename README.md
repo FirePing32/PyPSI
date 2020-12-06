@@ -87,13 +87,13 @@ PSI('google.com', category='seo', locale='en', stratergy='desktop')
 ```
 - `PSI` - _Required arguments_: 1, _Optional arguments_: 9
 
-    - `URL`: 
+    - `URL`:
         - Required
         - _Default_: **_None_**
-    - `api_key`: 
+    - `api_key`:
         - Optional
         - _Default_: **_None_**
-    - `category`: 
+    - `category`:
         - Optional
         - _Default_: **performance**
         - Options: `accessibility`, `best_practices`, `performance`, `pwa`, `seo`
@@ -101,10 +101,10 @@ PSI('google.com', category='seo', locale='en', stratergy='desktop')
         - Optional
         - _Default_: **None**
         - Options: `kind`, `captchaResult`, `id`, `loadingExperience`, `originLoadingExperience`, `analysisUTCTimestamp`, `lighthouseResult`, `version`
-    - `locale`: 
+    - `locale`:
         - Optional
         - _Default_: **en**
-    - `stratergy`: 
+    - `stratergy`:
         - Optional
         - _Default_: **desktop**
         - Options: `desktop`, `mobile`
@@ -116,12 +116,12 @@ PSI('google.com', category='seo', locale='en', stratergy='desktop')
         - Optional
         - _Default_: **false**
         - Options: `true`, `false`
-    - `utm_campaign`: 
+    - `utm_campaign`:
         - optional
         - _Default_: **_None_**
-    - `utm_source`: 
+    - `utm_source`:
         - Optional
         - _Default_: **_None_**
-    - `captcha_token`: 
+    - `captcha_token`:
         - Optional
         - _Default_: **_None_**
