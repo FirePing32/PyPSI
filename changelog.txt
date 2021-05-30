@@ -1,3 +1,2 @@
 ## What's new
-- Setup `pre-commit`
-- Reformat code in `api.py`, `main.py` and `utils/data.py`
+- `strategy` parameter now measures `mobile` performance

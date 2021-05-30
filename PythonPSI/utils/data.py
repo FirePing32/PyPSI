@@ -6,7 +6,7 @@ QUERY_URL = "https://www.googleapis.com/pagespeedonline/v5/runPagespeed?url="
 def HTTPS_OR_HTTP(
     url,
     api_key="",
-    stratergy="desktop",
+    strategy="desktop",
     locale="en",
     category="performance",
     threshold="",
@@ -20,8 +20,8 @@ def HTTPS_OR_HTTP(
     raw_data = requests.get(
         QUERY_URL
         + url
-        + "&stratergy="
-        + stratergy
+        + "&strategy="
+        + strategy
         + "&locale="
         + locale
         + "&category="
@@ -46,7 +46,7 @@ def HTTPS_OR_HTTP(
 def RAW(
     url,
     api_key="",
-    stratergy="desktop",
+    strategy="desktop",
     locale="en",
     category="performance",
     threshold="",
@@ -62,8 +62,8 @@ def RAW(
     raw_data = requests.get(
         QUERY_URL
         + site_url
-        + "&stratergy="
-        + stratergy
+        + "&strategy="
+        + strategy
         + "&locale="
         + locale
         + "&category="

@@ -35,7 +35,7 @@ version_info = (
     "--locale", default="en", help="The locale used to localize formatted results"
 )
 @click.option(
-    "--stratergy",
+    "--strategy",
     default="desktop",
     help="The analysis strategy (desktop or mobile) to use, and desktop is the default",
 )
@@ -64,7 +64,7 @@ def psi(
     category,
     metrics,
     locale,
-    stratergy,
+    strategy,
     threshold,
     links,
     utm_campaign,
@@ -77,7 +77,7 @@ def psi(
             api_key=api_key,
             category=category,
             locale=locale,
-            stratergy=stratergy,
+            strategy=strategy,
             threshold=threshold,
             links=links,
             utm_campaign=utm_campaign,
@@ -94,7 +94,7 @@ def psi(
             api_key=api_key,
             category=category,
             locale=locale,
-            stratergy=stratergy,
+            strategy=strategy,
             threshold=threshold,
             links=links,
             utm_campaign=utm_campaign,

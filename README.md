@@ -24,7 +24,7 @@ psi <SITE_URL> <OPTION1> <OPTION2> ...
 
 Example:
 ```bash
-$ psi developers.google.com --category seo --stratergy desktop --locale en
+$ psi developers.google.com --category seo --strategy desktop --locale en
 
     {
     "captchaResult": "CAPTCHA_NOT_NEEDED",
@@ -61,7 +61,7 @@ $ psi --help
                             object
 
     --locale TEXT         The locale used to localize formatted results
-    --stratergy TEXT      The analysis strategy (desktop or mobile) to use, and
+    --strategy TEXT      The analysis strategy (desktop or mobile) to use, and
                             desktop is the default
 
     --threshold TEXT      Threshold score to pass the PageSpeed test. Useful for
@@ -82,7 +82,7 @@ $ psi --help
 ```python
 from PythonPSI.api import PSI
 
-PSI('google.com', category='seo', locale='en', stratergy='desktop')
+PSI('google.com', category='seo', locale='en', strategy='desktop')
 # Returns JSON output
 ```
 - `PSI` - _Required arguments_: 1, _Optional arguments_: 9
@@ -104,7 +104,7 @@ PSI('google.com', category='seo', locale='en', stratergy='desktop')
     - `locale`:
         - Optional
         - _Default_: **en**
-    - `stratergy`:
+    - `strategy`:
         - Optional
         - _Default_: **desktop**
         - Options: `desktop`, `mobile`
