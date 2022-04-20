@@ -18,13 +18,14 @@ pip install PythonPSI
 ```
 
 ## Usage
+Google seems to have made it mandatory to use an API key, otherwise you may reach service quota limits too soon. Get one from [here](https://developers.google.com/speed/docs/insights/v5/get-started#APIKey).
 ```bash
 psi <SITE_URL> <OPTION1> <OPTION2> ...
 ```
 
 Example:
 ```bash
-$ psi developers.google.com --category seo --strategy desktop --locale en
+$ psi developers.google.com --category seo --stratergy desktop --locale en
 
     {
     "captchaResult": "CAPTCHA_NOT_NEEDED",
@@ -61,7 +62,7 @@ $ psi --help
                             object
 
     --locale TEXT         The locale used to localize formatted results
-    --strategy TEXT      The analysis strategy (desktop or mobile) to use, and
+    --stratergy TEXT      The analysis stratergy (desktop or mobile) to use, and
                             desktop is the default
 
     --threshold TEXT      Threshold score to pass the PageSpeed test. Useful for
@@ -82,7 +83,7 @@ $ psi --help
 ```python
 from PythonPSI.api import PSI
 
-PSI('google.com', category='seo', locale='en', strategy='desktop')
+PSI('google.com', category='seo', locale='en', stratergy='desktop')
 # Returns JSON output
 ```
 - `PSI` - _Required arguments_: 1, _Optional arguments_: 9
@@ -104,7 +105,7 @@ PSI('google.com', category='seo', locale='en', strategy='desktop')
     - `locale`:
         - Optional
         - _Default_: **en**
-    - `strategy`:
+    - `stratergy`:
         - Optional
         - _Default_: **desktop**
         - Options: `desktop`, `mobile`
