@@ -83,7 +83,7 @@ $ psi --help
 ```python
 from PythonPSI.api import PSI
 
-PSI('google.com', category='seo', locale='en', stratergy='desktop')
+PSI('google.com', category='seo', locale='en', strategy='desktop')
 # Returns JSON output
 ```
 - `PSI` - _Required arguments_: 1, _Optional arguments_: 9
